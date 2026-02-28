@@ -128,7 +128,7 @@ function Navbar({ scrollToPage }) {
           style={{ transition: centerTransition }}
         >
           <div className="flex gap-8 whitespace-nowrap">
-          
+
             <a
               href="#"
               onClick={(e) => handleNavClick(e, "page4")}
@@ -142,6 +142,13 @@ function Navbar({ scrollToPage }) {
             >
               Events
             </Link>
+            <a
+              href="#"
+              onClick={(e) => handleNavClick(e, "competitions")}
+              className="font-sans text-sm text-zinc-400 uppercase tracking-wide font-medium hover:text-white transition-colors duration-200 no-underline"
+            >
+              Competitions
+            </a>
           </div>
         </div>
 
@@ -163,10 +170,10 @@ function Navbar({ scrollToPage }) {
           ) : (
             <div className="hidden min-[901px]:block">
               <Link
-                to="/login"
+                to="/passes"
                 className="group bg-white text-black py-2.5 px-6 rounded-full font-semibold no-underline flex items-center gap-2 text-[0.95rem] whitespace-nowrap transition-all duration-200 hover:scale-105 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]"
               >
-                Login / Register{" "}
+                Passes{" "}
                 <ArrowUpRight
                   size={16}
                   className="transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -290,11 +297,11 @@ function Navbar({ scrollToPage }) {
             </Link>
           ) : (
             <Link
-              to="/login"
+              to="/passes"
               className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-5 rounded-2xl font-semibold uppercase tracking-wide text-white no-underline border-2 border-white/30 bg-white/5 transition-all duration-300 hover:bg-white/10 hover:border-white/50 active:scale-[0.98]"
               onClick={() => setIsMenuOpen(false)}
             >
-              Login / Register
+              Passes
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           )}

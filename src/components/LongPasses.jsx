@@ -132,9 +132,8 @@ function FeatureItem({ text, included, theme = "purple" }) {
   return (
     <li className="flex items-start gap-2 text-sm text-white/90">
       <span
-        className={`shrink-0 mt-0.5 rounded-full p-0.5 ${
-          included ? styles.checkBg : "bg-red-500/20 text-red-500"
-        }`}
+        className={`shrink-0 mt-0.5 rounded-full p-0.5 ${included ? styles.checkBg : "bg-red-500/20 text-red-500"
+          }`}
       >
         {included ? (
           <Check className="w-3.5 h-3.5" strokeWidth={2.5} />
@@ -203,12 +202,16 @@ function PassCard({ pass, onRegister, onUpgrade, isUpgrade, userPassStatus }) {
                 {pass.basePrice === 0 ? "Register" : "Buy Pass"}
               </button>
             ) : (
-              <Link
-                to="/login"
-                className="block w-full py-3 rounded-xl text-center text-sm font-semibold uppercase tracking-wide text-white/80 bg-zinc-700/80 border border-white/10 mb-6"
+              <button
+                data-tally-open="q4bYdG"
+                data-tally-layout="modal"
+                data-tally-width="800"
+                data-tally-overlay="1"
+                data-tally-auto-close="90000"
+                className="block w-full py-3 rounded-xl text-center text-sm font-semibold uppercase tracking-wide text-white/80 bg-zinc-700/80 border border-white/10 mb-6 cursor-pointer"
               >
-                Login to Register
-              </Link>
+                Register
+              </button>
             )}
           </div>
         </div>
@@ -444,11 +447,10 @@ function UpgradeModal({ upgradeData, paymentQrUrl, onClose, onSuccess }) {
               key={opt.passTypeId}
               type="button"
               onClick={() => setSelectedTarget(opt)}
-              className={`w-full p-3 rounded-xl border text-left text-sm transition-colors ${
-                selectedTarget?.passTypeId === opt.passTypeId
+              className={`w-full p-3 rounded-xl border text-left text-sm transition-colors ${selectedTarget?.passTypeId === opt.passTypeId
                   ? "border-purple-500 bg-purple-500/10 text-white"
                   : "border-white/10 text-white/70 hover:bg-white/5"
-              }`}
+                }`}
             >
               <span className="font-semibold">{opt.name}</span>
               <span className="ml-2 text-purple-300">
@@ -775,13 +777,12 @@ export default function LongPasses() {
                       {p.passType?.name || p.passType || "Pass"}
                     </span>
                     <span
-                      className={`px-2 py-0.5 rounded-full text-xs ${
-                        p.status === "approved"
+                      className={`px-2 py-0.5 rounded-full text-xs ${p.status === "approved"
                           ? "bg-emerald-500/20 text-emerald-400"
                           : p.status === "rejected"
                             ? "bg-red-500/20 text-red-400"
                             : "bg-yellow-500/20 text-yellow-400"
-                      }`}
+                        }`}
                     >
                       {p.status === "approved"
                         ? "Approved"
