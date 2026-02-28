@@ -164,16 +164,20 @@ function Navbar({ scrollToPage }) {
             </div>
           ) : (
             <div className="hidden min-[901px]:block">
-              <Link
-                to="/login"
-                className="group bg-white text-black py-2.5 px-6 rounded-full font-semibold no-underline flex items-center gap-2 text-[0.95rem] whitespace-nowrap transition-all duration-200 hover:scale-105 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+              <button
+                data-tally-open="q4bYdG"
+                data-tally-layout="modal"
+                data-tally-width="800"
+                data-tally-overlay="1"
+                data-tally-auto-close="90000"
+                className="group bg-white text-black py-2.5 px-6 rounded-full font-semibold no-underline flex items-center gap-2 text-[0.95rem] whitespace-nowrap transition-all duration-200 hover:scale-105 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] cursor-pointer border-none"
               >
                 Register{" "}
                 <ArrowUpRight
                   size={16}
                   className="transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
-              </Link>
+              </button>
             </div>
           )}
 
@@ -291,14 +295,18 @@ function Navbar({ scrollToPage }) {
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           ) : (
-            <Link
-              to="/login"
-              className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-5 rounded-2xl font-semibold uppercase tracking-wide text-white no-underline border-2 border-white/30 bg-white/5 transition-all duration-300 hover:bg-white/10 hover:border-white/50 active:scale-[0.98]"
+            <button
+              data-tally-open="q4bYdG"
+              data-tally-layout="modal"
+              data-tally-width="800"
+              data-tally-overlay="1"
+              data-tally-auto-close="90000"
+              className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-5 rounded-2xl font-semibold uppercase tracking-wide text-white no-underline border-2 border-white/30 bg-white/5 transition-all duration-300 hover:bg-white/10 hover:border-white/50 active:scale-[0.98] cursor-pointer"
               onClick={() => setIsMenuOpen(false)}
             >
               Register
               <ArrowUpRight className="w-4 h-4" />
-            </Link>
+            </button>
           )}
         </div>
       </div>
