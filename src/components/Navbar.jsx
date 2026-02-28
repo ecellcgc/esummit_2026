@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ArrowUpRight, Menu, X, Home, Info, Calendar, Ticket, Sparkles, Users, Mail, Mic, Award } from "lucide-react";
+import logo from "../../public/assets/ecl_logo.png";
 
 const navTransition =
   "padding 1.4s cubic-bezier(0.33, 0, 0.67, 1), gap 1.4s cubic-bezier(0.33, 0, 0.67, 1), border-color 1.4s ease, background 1.4s ease";
@@ -111,10 +112,7 @@ function Navbar({ scrollToPage }) {
               onClick={(e) => handleNavClick(e, "page1")}
               className="flex flex-col leading-none no-underline text-white font-bold whitespace-nowrap text-[1.1rem] font-['Proxy_Mono_Beta',monospace]"
             >
-              E-CELL{" "}
-              <span className="text-[0.4em] opacity-70 tracking-[2px] mt-0.5">
-                CGC
-              </span>
+              <img src={logo} alt="E-CELL CGC Logo" className="w-10 h-10" />
             </a>
           </div>
         </div>
