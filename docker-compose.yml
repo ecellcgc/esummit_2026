@@ -1,0 +1,11 @@
+services:
+  esummit-cgc-2k26:
+    image: esummit-cgc-2k26-frontend
+    container_name: esummit-cgc-2k26-frontend
+    ports:
+      - "3011:3000"
+    environment:
+      NODE_ENV: production
+    build:
+      context: .
+      dockerfile: Dockerfile

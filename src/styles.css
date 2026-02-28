@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+/* CSS variables used by GSAP scroll-reveal (.js-fill > span) */
+:root {
+  --bg: #0b0c0f;
+  --fg: #f3f4f6;
+  --muted: #3f434a;
+}
+
+/* GSAP scroll-reveal gradient target – must stay in CSS for animation */
+.fill-text > span,
+.js-fill > span {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-color: var(--muted);
+  background-image: linear-gradient(135deg, #d984fa 50%, #a855f7 60%);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 0% 200%;
+  color: rgba(255, 255, 255, 0.2); ;
+  display: inline;
+  will-change: background-size;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fill-text > span,
+  .js-fill > span {
+    background-size: 200% 200%;
+  }
+}
+
+/* Lenis smooth scroll – library applies these classes */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Loading screen – burn/open animation (requires @property and pseudo-elements) */
+@property --mask-radius {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+.loading-screen.splitting {
+  background: transparent;
+  pointer-events: none;
+}
+
+.loading-screen.splitting::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 9998;
+  -webkit-mask-image: radial-gradient(
+    circle,
+    transparent var(--mask-radius),
+    black calc(var(--mask-radius) + 5%)
+  );
+  mask-image: radial-gradient(
+    circle,
+    transparent var(--mask-radius),
+    black calc(var(--mask-radius) + 5%)
+  );
+  animation: burnOpen 2s cubic-bezier(0.5, 0, 0.2, 1) forwards;
+}
+
+.loading-screen.splitting::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9997;
+  background: linear-gradient(135deg, #d984fa 50%, #a855f7 10%);
+  -webkit-mask-image: radial-gradient(
+    circle,
+    transparent var(--mask-radius),
+    black calc(var(--mask-radius) + 1%),
+    black calc(var(--mask-radius) + 6%),
+    transparent calc(var(--mask-radius) + 8%)
+  );
+  mask-image: radial-gradient(
+    circle,
+    transparent var(--mask-radius),
+    black calc(var(--mask-radius) + 1%),
+    black calc(var(--mask-radius) + 6%),
+    transparent calc(var(--mask-radius) + 8%)
+  );
+  animation: burnOpen 2s cubic-bezier(0.5, 0, 0.2, 1) forwards;
+}
+
+@keyframes burnOpen {
+  0% {
+    --mask-radius: 0%;
+  }
+  100% {
+    --mask-radius: 150%;
+  }
+}
+
+@supports not (background: paint(something)) {
+  .loading-screen.splitting::before {
+    animation: simpleFade 1s forwards;
+    mask-image: none;
+  }
+  .loading-screen.splitting::after {
+    display: none;
+  }
+}
+
+@keyframes simpleFade {
+  to {
+    opacity: 0;
+  }
+}
