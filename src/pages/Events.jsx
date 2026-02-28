@@ -460,7 +460,7 @@ function Events() {
       : EVENTS_DATA.filter((e) => e.category === activeCategory);
 
   return (
-    <div className="min-h-screen min-h-[100dvh] bg-black text-white overscroll-none">
+    <div className="min-h-screen min-h-[100dvh] h-[100dvh] bg-black text-white overscroll-none overflow-y-auto overflow-x-hidden">
       <div
         className="fixed inset-0 pointer-events-none z-0"
         style={{
@@ -493,11 +493,10 @@ function Events() {
               key={cat.id}
               type="button"
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                activeCategory === cat.id
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${activeCategory === cat.id
                   ? "bg-white text-black"
                   : "bg-white/10 text-white border border-white/20 hover:bg-white/15"
-              }`}
+                }`}
             >
               {cat.label}
             </button>
