@@ -206,59 +206,21 @@ export default function EventTimelineSection() {
           <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-transparent mx-auto rounded-full" />
         </motion.div>
 
-        {/* Navigation Tabs */}
-        <div className="sticky top-16 md:top-20 z-40 mb-6 md:mb-8 p-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-md shadow-lg w-fit max-w-full overflow-x-auto mx-auto">
-          <div className="flex items-center gap-1 sm:gap-2 justify-center px-1">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`relative px-3 sm:px-5 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
-                  activeTab === tab.id
-                    ? "text-white"
-                    : "text-gray-400 hover:text-white hover:bg-white/5"
-                }`}
-              >
-                {activeTab === tab.id && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute inset-0 bg-purple-600 rounded-full shadow-[0_0_20px_rgba(147,51,234,0.3)]"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                  />
-                )}
-                <span className="relative z-10">{tab.label}</span>
-              </button>
-            ))}
+        {/* To Be Revealed */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="w-full flex flex-col items-center justify-center py-16 md:py-24"
+        >
+          <div className="relative px-8 py-6 rounded-2xl border border-purple-500/20 bg-white/[0.03] backdrop-blur-sm">
+            <div className="absolute -inset-1 rounded-2xl bg-purple-500/5 blur-xl pointer-events-none" />
+            <p className="relative text-2xl sm:text-3xl md:text-4xl font-bold text-white/80 tracking-widest uppercase text-center m-0">
+              To Be Revealed
+            </p>
           </div>
-        </div>
-
-        {/* Timeline Content */}
-        <div className="w-full relative">
-          {/* Vertical Center Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-white/5 transform -translate-x-1/2"></div>
-
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3 }}
-              className="w-full"
-            >
-              <div className="relative pt-2 pb-6">
-                {scheduleData[activeTab].map((item, index) => (
-                  <TimelineCard
-                    key={item.id}
-                    item={item}
-                    index={index}
-                    isLeft={index % 2 === 0}
-                  />
-                ))}
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
