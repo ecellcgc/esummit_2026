@@ -52,6 +52,7 @@ function PastGuestsSection() {
           <h2 className="font-sans text-[clamp(32px,5vw,64px)] text-white font-bold uppercase tracking-[2px] m-0">
             PAST GUESTS
           </h2>
+          <p className="font-sans text-xs sm:text-sm text-white/50 tracking-widest uppercase mt-1 m-0">in CGC Landran</p>
         </div>
 
         <div className="w-full max-w-7xl mx-auto px-4">
