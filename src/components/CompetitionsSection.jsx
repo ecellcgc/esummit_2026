@@ -1,5 +1,6 @@
 import React from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const competitionsData = [
     {
@@ -34,7 +35,7 @@ const competitionsData = [
         title: "SELL YOUR SOUL",
         description: "Step into the role of a CMO! Given a brand brief, budget, and goals, quickly create a complete go-to-market strategy, including a one-take ad and final pitch under time pressure.",
         highlights: ["CMO-style marketing challenge", "War-room strategy sprint", "One-take ad creation", "Live pitching"],
-        image: "/assets/sell.jpeg",
+        image: "/assets/marketing.jpeg",
         link: "#register-cmo",
         bgClass: "from-black via-purple-700/40 to-black"
     }
@@ -42,6 +43,7 @@ const competitionsData = [
 
 function CompetitionsSection() {
     return (
+        <>
         <section
             id="competitions"
             className="relative w-full max-w-[100vw] m-0 p-0 flex flex-col items-center justify-center overflow-x-hidden overflow-y-visible bg-black py-8 md:py-16"
@@ -54,12 +56,21 @@ function CompetitionsSection() {
             }}
         >
             {/* Header */}
-            <h2 className="font-sans text-[clamp(32px,5vw,64px)] text-white font-bold uppercase tracking-[8px] text-center w-full pointer-events-none mb-12 md:mb-20 shrink-0 z-10 relative">
-                COMPETITIONS
-            </h2>
+            <div className="w-full text-center mb-8">
+                <h2 className="font-sans text-[clamp(32px,5vw,64px)] text-white font-bold uppercase tracking-[8px] text-center w-full pointer-events-none mb-4 md:mb-6 shrink-0 z-10 relative">
+                    COMPETITIONS
+                </h2>
+
+                {/* Promotional banner: total prizes and participant credits */}
+                <div className="inline-flex items-center gap-3 mx-auto bg-gradient-to-r from-orange-700/30 to-yellow-500/20 border border-white/10 rounded-full px-4 py-2 text-sm text-white/90 shadow-sm">
+                    <strong className="text-purple-200">Win cash prizes worth Thousands</strong>
+                    <span className="text-white/60">•</span>
+                    <span className="text-white/80">Exciting platform credits</span>
+                </div>
+            </div>
 
             {/* Container for Cards */}
-            <div className="relative w-full flex flex-col gap-16 md:gap-32 z-10">
+            <div className="relative w-full flex flex-col gap-16 md:gap-10 z-10">
                 {competitionsData.map((comp, index) => {
                     const isEven = index % 2 !== 0; // Toggle layout side
 
@@ -97,6 +108,19 @@ function CompetitionsSection() {
                                         {comp.title}
                                     </h3>
 
+                                    {/* Prize & credits badge */}
+                                    <div className="mt-2 flex items-center gap-3">
+                                        <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-400/20 rounded-full px-3 py-1 text-amber-200 text-sm">
+                                            <strong>Cash Prize and credits (to be revealed)</strong>
+                                            {/* <span className="font-bold">{comp.prize || '₹25,000'}</span> */}
+                                        </div>
+
+                                        {/* <div className="inline-flex items-center gap-2 bg-sky-500/8 border border-sky-400/10 rounded-full px-3 py-1 text-sky-200 text-sm">
+                                            <strong>Participant Credit:</strong>
+                                            <span className="font-semibold">{comp.credit || '₹500'}</span>
+                                        </div> */}
+                                    </div>
+
                                     <p className="font-sans text-base sm:text-lg text-zinc-300 leading-relaxed max-w-[90%] font-light">
                                         {comp.description}
                                     </p>
@@ -111,6 +135,7 @@ function CompetitionsSection() {
                                             </ul>
                                         </div>
                                     )}
+                                    
 
                                     {/* 
                                     <a
@@ -132,6 +157,13 @@ function CompetitionsSection() {
             <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-purple-600/10 blur-[120px] pointer-events-none z-0" />
             <div className="absolute bottom-1/4 -right-32 w-80 h-80 rounded-full bg-violet-500/10 blur-[100px] pointer-events-none z-0" />
         </section>
+        {<Link
+            to="/events"
+            className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white/[0.06] backdrop-blur-xl border border-white/10 hover:border-purple-500/40 text-black hover:bg-purple-500/10 transition-colors text-sm font-medium shadow-[0_4px_24px_rgba(0,0,0,0.2)]">
+            <b>Go To All Events</b>
+            <ArrowRight className="w-4 h-4" />
+        </Link>}
+        </>
     );
 }
 

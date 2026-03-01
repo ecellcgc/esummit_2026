@@ -27,7 +27,7 @@ const EVENTS_DATA = [
     tag: "Competition",
     shortDescription:
       "The premier startup investment competition of E-Summit 2026. Teams pitch to investors in a boardroom-style funding simulation focused on scalability and execution.",
-    image: "/assets/img1.jpg",
+    image: "/assets/pitch.jpeg",
     date: "February 25, 2026",
     time: "10:00 AM",
     location: "Block 10 Audi / Central Park, CGC Landran",
@@ -51,7 +51,7 @@ const EVENTS_DATA = [
     tag: "Competition",
     shortDescription:
       "Build the strongest squad within a fixed virtual budget through a live auction. Strategy, risk management, and team coordination—sports excitement meets business.",
-    image: "/assets/img2.jpg",
+    image: "/assets/ipl.jpeg",
     date: "February 25–26, 2026",
     time: "11:00 AM",
     location: "Block 10 / Board Room, CGC Landran",
@@ -75,7 +75,7 @@ const EVENTS_DATA = [
     tag: "Competition",
     shortDescription:
       "Live paper trading competition with virtual capital under real market conditions. Build trading and risk-management skills with a real-time leaderboard.",
-    image: "/assets/img3.jpg",
+    image: "/assets/trade.jpeg",
     date: "February 25, 2026",
     time: "02:00 PM",
     location: "Block 10, CGC Landran",
@@ -99,7 +99,7 @@ const EVENTS_DATA = [
     tag: "Competition",
     shortDescription:
       "Step into the CMO role: create a full go-to-market strategy from a brief, film a one-take ad, and defend your brand before an expert jury.",
-    image: "/assets/img1.jpg",
+    image: "/assets/marketing.jpeg",
     date: "February 26, 2026",
     time: "10:00 AM",
     location: "Board Room / Central Park, CGC Landran",
@@ -125,7 +125,7 @@ const EVENTS_DATA = [
     tag: "EXPO",
     shortDescription:
       "Exhibition platform where innovators showcase products and solutions. Direct interaction with investors, mentors, and industry professionals.",
-    image: "/assets/img5.jpg",
+    image: "/assets/expo.jpeg",
     date: "February 25–26, 2026",
     time: "10:00 AM – 5:00 PM",
     location: "Central Park / Exhibition Area, CGC Landran",
@@ -150,7 +150,7 @@ const EVENTS_DATA = [
     tag: "Session",
     shortDescription:
       "An insightful session on India's startup ecosystem—opportunities, challenges for founders, and trends shaping the next decade.",
-    image: "/assets/img1.jpg",
+    image: "/assets/session1.jpeg",
     date: "February 25, 2026",
     time: "10:30 AM",
     location: "Main Audi, CGC Landran",
@@ -174,7 +174,7 @@ const EVENTS_DATA = [
     tag: "Fireside",
     shortDescription:
       "A candid conversation with industry leaders on AI, rapid delivery, and fintech reshaping businesses and consumer behavior.",
-    image: "/assets/img2.jpg",
+    image: "/assets/fireside.jpeg",
     date: "February 25, 2026",
     time: "02:00 PM",
     location: "Main Audi, CGC Landran",
@@ -198,7 +198,7 @@ const EVENTS_DATA = [
     tag: "Session",
     shortDescription:
       "Expert-led session by Upstox on financial markets, trading fundamentals, and wealth creation strategies.",
-    image: "/assets/img3.jpg",
+    image: "/assets/finance.jpeg",
     date: "February 26, 2026",
     time: "10:00 AM",
     location: "Main Audi, CGC Landran",
@@ -222,7 +222,7 @@ const EVENTS_DATA = [
     tag: "Session",
     shortDescription:
       "Interactive workshop on validating ideas, understanding customer needs, and refining products for real product–market fit.",
-    image: "/assets/img1.jpg",
+    image: "/assets/product.jpeg",
     date: "February 26, 2026",
     time: "11:30 AM",
     location: "Parallel Block 2, CGC Landran",
@@ -247,7 +247,7 @@ const EVENTS_DATA = [
     tag: "Networking",
     shortDescription:
       "Connect young innovators and students with professionals, mentors, and entrepreneurs. Share ideas and build relationships.",
-    image: "/assets/img5.jpg",
+    image: "/assets/net1.jpeg",
     date: "February 25, 2026",
     time: "04:00 PM",
     location: "Central Park / Networking Zone, CGC Landran",
@@ -271,7 +271,7 @@ const EVENTS_DATA = [
     tag: "Career",
     shortDescription:
       "Companies and startups offer internship opportunities. Explore roles, meet recruiters, and discover pathways to real-world experience.",
-    image: "/assets/img2.jpg",
+    image: "/assets/net3.jpeg",
     date: "February 25–26, 2026",
     time: "11:00 AM – 3:00 PM",
     location: "Exhibition Area, CGC Landran",
@@ -295,7 +295,7 @@ const EVENTS_DATA = [
     tag: "Networking",
     shortDescription:
       "Exclusive networking dinner with founders, investors, and student leaders. Build meaningful connections in a relaxed setting.",
-    image: "/assets/img3.jpg",
+    image: "/assets/net4.jpeg",
     date: "February 26, 2026",
     time: "07:00 PM",
     location: "Venue TBA, CGC Landran",
@@ -410,7 +410,7 @@ function EventDetailModal({ event, onClose }) {
           )}
 
           {/* CTA section */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/10">
+          {/* <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/10">
             <div className="flex items-center gap-2 text-sm text-white/60">
               <div className="flex -space-x-2">
                 {[1, 2, 3].map((i) => (
@@ -443,7 +443,7 @@ function EventDetailModal({ event, onClose }) {
                 </Link>
               )}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
@@ -564,7 +564,7 @@ function Events() {
               </div>
 
               {/* CTA bar below image */}
-              <div
+              {/* <div
                 className="px-3 py-2 flex flex-wrap items-center justify-between gap-1.5 bg-black/40 border-t border-white/10"
                 onClick={(e) => e.stopPropagation()}
               >
@@ -602,7 +602,7 @@ function Events() {
                     </Link>
                   )}
                 </div>
-              </div>
+              </div> */}
             </article>
           ))}
         </div>

@@ -26,12 +26,12 @@ import LoadingScreen from "./components/LoadingScreen";
 function App() {
   const [loading, setLoading] = React.useState(() => {
     if (typeof window === "undefined") return false;
-    const isRootPage =
-      window.location.pathname === "/" || window.location.pathname === "";
+    const path = window.location.pathname || "";
+    const rootPaths = ["/", "", "/esummit", "/esummit/"];
+    const isRootPage = rootPaths.includes(path);
     if (!isRootPage) return false;
-    const isMobile =
-      window.innerWidth < 768 || "ontouchstart" in window || navigator.maxTouchPoints > 0;
-    return !isMobile;
+    // Play loading on all screens (including small/mobile). LoadingScreen has mobile autoplay fallbacks.
+    return true;
   });
 
   // if (loading) {
@@ -47,8 +47,10 @@ function App() {
         <Router>
           <>
             <Routes>
-              <Route path="/esummit" element={<Navigate to="/" replace />} />
-              <Route path="/esummit/" element={<Navigate to="/" replace />} />
+              <Route path="/esummit" element={<Home />} />
+              <Route path="/esummit/" element={<Home />} />
+              {/* <Route path="/esummit" element={<Navigate to="/" replace />} />
+              <Route path="/esummit/" element={<Navigate to="/" replace />} /> */}
               <Route path="/" element={<Home />} />
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />

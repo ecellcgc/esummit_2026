@@ -748,15 +748,29 @@ export default function LongPasses() {
           <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-purple-400/90 mb-2">
             E-Summit 2k26
           </p>
-          <h2 className="font-sans text-[clamp(32px,5vw,64px)] text-white font-bold uppercase tracking-[2px] m-0 pb-4 px-1">
-            Long Passes
+          <h2 className="font-sans text-[clamp(32px,5vw,64px)] text-white font-bold uppercase tracking-[2px] m-0 pb-1 px-1">
+            Entry Passes
           </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-transparent mx-auto rounded-full mb-4" />
-          <p className="text-white/60 text-sm max-w-xl mx-auto px-1 sm:px-2">
+          <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-transparent mx-auto rounded-full mb-2" />
+          {/* Promotional banner for participants */}
+          <div className="mt-3 max-w-xl mx-auto">
+            <div className="px-16 rounded-2xl bg-gradient-to-r from-purple-700/20 to-purple-500/10 border border-white/10 p-2 flex flex-col sm:flex-row items-center justify-between gap-3">
+              <div className="text-left">
+                <p className="text-sm text-amber-300 font-semibold">Special Cash Prizes Worth <b>THOUSANDS</b> and credits are on the way!</p>
+                {/* <p className="text-sm text-amber-300 font-semibold">Special Offer for Participants</p> */}
+                {/* <p className="text-white/80 text-sm">All registered participants receive <span className="font-bold text-white">₹500 event credits</span> plus a chance to win cash prizes worth <span className="font-bold text-white">₹2,00,000+</span>. Use credits at partner booths or for workshop registrations.</p> */}
+              </div>
+              {/* <div className="flex items-center gap-3">
+                <a href="/events" className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-600 text-white font-semibold hover:bg-purple-500 transition">See Competitions</a>
+                <a href="/passes" className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 text-white/90 hover:bg-white/5 transition">Register Now</a>
+              </div> */}
+            </div>
+          </div>
+        </div>
+          {/* <p className="text-white/60 text-sm max-w-xl mx-auto px-1 sm:px-2">
             Choose the pass that fits your experience. All passes include access
             to keynotes, events, and more.
-          </p>
-        </div>
+          </p> */}
 
         {loggedIn && (
           <div className="mb-10 p-4 rounded-2xl bg-white/[0.06] border border-white/10">
@@ -860,6 +874,19 @@ export default function LongPasses() {
           onSuccess={handleModalSuccess}
         />
       )}
+      {/* Mobile scroll indicator (right-lower corner) */}
+      <div className="md:hidden fixed right-4 bottom-6 z-50 pointer-events-none">
+        <div className="flex flex-col items-center gap-1 opacity-60">
+          <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white">
+            {/* Down arrow SVG */}
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+              <path d="M12 5v14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M19 12l-7 7-7-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+          <span className="text-xs text-white/80 tracking-widest">SCROLL</span>
+        </div>
+      </div>
     </section>
   );
 }

@@ -112,7 +112,7 @@ function Navbar({ scrollToPage }) {
               onClick={(e) => handleNavClick(e, "page1")}
               className="flex flex-col leading-none no-underline text-white font-bold whitespace-nowrap text-[1.1rem] font-['Proxy_Mono_Beta',monospace]"
             >
-              <img src={logo} alt="E-CELL CGC Logo" className="w-10 h-10" />
+              <img src={logo} alt="E-CELL CGC Logo" className="w-20 h-15" />
             </a>
           </div>
         </div>
@@ -273,16 +273,7 @@ function Navbar({ scrollToPage }) {
 
         {/* CTA at bottom */}
         <div className="relative z-10 flex flex-col gap-3 w-full max-w-[320px] mx-auto px-4 pb-8 pt-4 shrink-0">
-          {isLoggedIn ? (
-            <Link
-              to="/dashboard"
-              className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-5 rounded-2xl font-semibold uppercase tracking-wide text-white no-underline transition-all duration-300 shadow-[0_4px_20px_rgba(217,132,250,0.35)] bg-gradient-to-r from-[#d984fa] to-[#a855f7] hover:shadow-[0_6px_28px_rgba(217,132,250,0.5)] hover:-translate-y-0.5 active:scale-[0.98]"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Dashboard
-              <ArrowUpRight className="w-4 h-4" />
-            </Link>
-          ) : (
+          {(
             <Link
               to="/passes"
               className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-5 rounded-2xl font-semibold uppercase tracking-wide text-white no-underline border-2 border-white/30 bg-white/5 transition-all duration-300 hover:bg-white/10 hover:border-white/50 active:scale-[0.98]"
