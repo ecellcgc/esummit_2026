@@ -15,6 +15,7 @@ import Contact from "./pages/Contact";
 import LongPassesPage from "./pages/LongPassesPage";
 import Events from "./pages/Events";
 import ComingSoon from "./pages/ComingSoon";
+import EventRegistration from "./pages/EventRegistration";
 import Onboarding from "./pages/Onboarding";
 import ProtectedRoute from "./components/ProtectedRoute";
 import "./styles.css";
@@ -67,7 +68,15 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/passes" element={<LongPassesPage />} />
               <Route path="/events" element={<Events />} />
-              <Route path="/event-registration" element={<ComingSoon title="Event Registration" />} />
+              <Route
+                path="/event-registration"
+                element={
+                  <ProtectedRoute>
+                    <EventRegistration />
+                  </ProtectedRoute>
+                }
+              />
+              {/* <Route path="/event-registration" element={<ComingSoon title="Event Registration" />} /> */}
               <Route path="/team" element={<ComingSoon title="Team" />} />
               <Route path="/expo" element={<ComingSoon title="Expo" />} />
               <Route

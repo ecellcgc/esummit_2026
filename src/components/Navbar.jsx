@@ -153,7 +153,46 @@ function Navbar({ scrollToPage }) {
         </div>
 
         {/* RIGHT: ACTIONS */}
+
         <div className="flex items-center gap-4">
+          {isLoggedIn ? (
+            <div className="hidden min-[901px]:block">
+              <Link
+                to="/dashboard"
+                className="group bg-white text-black py-2.5 px-6 rounded-full font-semibold no-underline flex items-center gap-2 text-[0.95rem] whitespace-nowrap transition-all duration-200 hover:scale-105 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+              >
+                Dashboard{" "}
+                <ArrowUpRight
+                  size={16}
+                  className="transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </Link>
+            </div>
+          ) : (
+            <div className="hidden min-[901px]:block">
+              <Link
+                to="/login"
+                className="group bg-white text-black py-2.5 px-6 rounded-full font-semibold no-underline flex items-center gap-2 text-[0.95rem] whitespace-nowrap transition-all duration-200 hover:scale-105 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+              >
+                Login / Register{" "}
+                <ArrowUpRight
+                  size={16}
+                  className="transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </Link>
+            </div>
+          )}
+
+          <button
+            type="button"
+            className="flex min-[901px]:hidden bg-transparent border-none text-white cursor-pointer z-[1002] ml-4 p-0"
+            onClick={toggleMenu}
+            aria-label="Toggle navigation"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+        {/* <div className="flex items-center gap-4">
           {(
             <div className="hidden min-[901px]:block">
               <Link
@@ -177,7 +216,7 @@ function Navbar({ scrollToPage }) {
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-        </div>
+        </div> */}
       </nav>
 
       {/* Mobile Menu Overlay */}
@@ -273,7 +312,26 @@ function Navbar({ scrollToPage }) {
 
         {/* CTA at bottom */}
         <div className="relative z-10 flex flex-col gap-3 w-full max-w-[320px] mx-auto px-4 pb-8 pt-4 shrink-0">
-          {(
+          {isLoggedIn ? (
+            <Link
+              to="/dashboard"
+              className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-5 rounded-2xl font-semibold uppercase tracking-wide text-white no-underline transition-all duration-300 shadow-[0_4px_20px_rgba(217,132,250,0.35)] bg-gradient-to-r from-[#d984fa] to-[#a855f7] hover:shadow-[0_6px_28px_rgba(217,132,250,0.5)] hover:-translate-y-0.5 active:scale-[0.98]"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Dashboard
+              <ArrowUpRight className="w-4 h-4" />
+            </Link>
+          ) : (
+            <Link
+              to="/login"
+              className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-5 rounded-2xl font-semibold uppercase tracking-wide text-white no-underline border-2 border-white/30 bg-white/5 transition-all duration-300 hover:bg-white/10 hover:border-white/50 active:scale-[0.98]"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Login / Register
+              <ArrowUpRight className="w-4 h-4" />
+            </Link>
+          )}
+          {/* {(
             <Link
               to="/passes"
               className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-5 rounded-2xl font-semibold uppercase tracking-wide text-white no-underline border-2 border-white/30 bg-white/5 transition-all duration-300 hover:bg-white/10 hover:border-white/50 active:scale-[0.98]"
@@ -282,7 +340,7 @@ function Navbar({ scrollToPage }) {
               Passes
               <ArrowUpRight className="w-4 h-4" />
             </Link>
-          )}
+          )} */}
         </div>
       </div>
     </>

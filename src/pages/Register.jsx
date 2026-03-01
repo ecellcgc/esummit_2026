@@ -92,6 +92,12 @@ function Register() {
       <div className="fixed w-fit h-fit rounded-full blur-[100px] opacity-50 bg-violet-900 z-0 md:w-[300px] md:h-[300px] md:opacity-40" aria-hidden />
       <div className="fixed w-fit h-fit rounded-full blur-[100px] opacity-50 bg-purple-700 z-0 md:w-[300px] md:h-[300px] md:opacity-40" aria-hidden />
 
+      {/* Back to home button */}
+      <Link to="/" className="absolute left-4 top-4 md:left-8 md:top-8 z-50 inline-flex items-center gap-2 px-3 py-1.5 bg-white/5 text-white rounded-full border border-white/10 hover:bg-white/8 no-underline">
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        <span className="text-sm">Home</span>
+      </Link>
+
       <div className="relative z-10 w-full flex justify-center px-5 py-10 md:px-4">
         <div
           className="w-fit min-w-[420px] max-w-[520px] py-12 px-10 md:py-8 md:px-6 bg-[rgba(10,10,10,0.6)] backdrop-blur-[20px] border border-white/[0.08] border-t-white/15 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] animate-fadeSlideUp"

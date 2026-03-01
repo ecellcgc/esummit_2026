@@ -139,8 +139,9 @@ const EVENTS_DATA = [
       "High-visibility startup showcase",
     ],
     participantCount: 120,
-    applyLink: "/event-registration",
-    registerAudienceLink: "/event-registration",
+    // applyLink: "/event-registration",
+    applyLink: null,
+    // registerAudienceLink: "/event-registration",
   },
   // ——— Flagship Sessions and Talks ———
   {
@@ -165,7 +166,7 @@ const EVENTS_DATA = [
     ],
     participantCount: 500,
     applyLink: null,
-    registerAudienceLink: "/event-registration",
+    // registerAudienceLink: "/event-registration",
   },
   {
     id: 7,
@@ -189,7 +190,7 @@ const EVENTS_DATA = [
     ],
     participantCount: 400,
     applyLink: null,
-    registerAudienceLink: "/event-registration",
+    // registerAudienceLink: "/event-registration",
   },
   {
     id: 8,
@@ -213,7 +214,7 @@ const EVENTS_DATA = [
     ],
     participantCount: 350,
     applyLink: null,
-    registerAudienceLink: "/event-registration",
+    // registerAudienceLink: "/event-registration",
   },
   {
     id: 9,
@@ -236,8 +237,8 @@ const EVENTS_DATA = [
       "Interactive activities & discussions",
     ],
     participantCount: 80,
-    applyLink: "/event-registration",
-    registerAudienceLink: "/event-registration",
+    applyLink: null,
+    // registerAudienceLink: "/event-registration",
   },
   // ——— Networking and Career ———
   {
@@ -262,7 +263,7 @@ const EVENTS_DATA = [
     ],
     participantCount: 200,
     applyLink: null,
-    registerAudienceLink: "/event-registration",
+    // registerAudienceLink: "/event-registration",
   },
   {
     id: 11,
@@ -286,7 +287,7 @@ const EVENTS_DATA = [
     ],
     participantCount: 300,
     applyLink: null,
-    registerAudienceLink: "/event-registration",
+    // registerAudienceLink: "/event-registration",
   },
   {
     id: 12,
@@ -310,7 +311,7 @@ const EVENTS_DATA = [
     ],
     participantCount: 100,
     applyLink: null,
-    registerAudienceLink: "/event-registration",
+    // registerAudienceLink: "/event-registration",
   },
 ];
 
@@ -410,9 +411,9 @@ function EventDetailModal({ event, onClose }) {
           )}
 
           {/* CTA section */}
-          {/* <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/10">
-            <div className="flex items-center gap-2 text-sm text-white/60">
-              <div className="flex -space-x-2">
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/10">
+            {/* <div className="flex items-center gap-2 text-sm text-white/60"> */}
+              {/* <div className="flex -space-x-2">
                 {[1, 2, 3].map((i) => (
                   <div
                     key={i}
@@ -421,11 +422,11 @@ function EventDetailModal({ event, onClose }) {
                     {i}
                   </div>
                 ))}
-              </div>
-              <span>+{event.participantCount} interested</span>
-            </div>
+              </div> */}
+              {/* <span>+{event.participantCount} interested</span> */}
+            {/* </div> */}
             <div className="flex flex-wrap gap-3">
-              {event.applyLink && event.category === "main" && (
+              {/* {event.applyLink && event.category === "main" && (
                 <Link
                   to={event.applyLink}
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-black font-semibold text-sm hover:bg-gray-200 transition-colors"
@@ -433,17 +434,17 @@ function EventDetailModal({ event, onClose }) {
                   Apply (Startups)
                   <ExternalLink className="w-4 h-4" />
                 </Link>
-              )}
+              )} */}
               {event.category !== "main" && (
                 <Link
                   to={event.registerAudienceLink || "/event-registration"}
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/30 bg-white/5 text-white font-medium text-sm hover:bg-white/10 transition-colors"
                 >
-                  Register as Audience
+                  Register in Competitions
                 </Link>
               )}
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

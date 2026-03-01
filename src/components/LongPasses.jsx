@@ -203,7 +203,40 @@ function PassCard({ pass, onRegister, onUpgrade, isUpgrade, userPassStatus }) {
           <div className="flex flex-wrap items-baseline justify-center gap-2 mb-5">
             <span className="text-2xl font-bold text-white">{pass.price}</span>
           </div>
-          <div className="">
+
+          <div className="mt-auto">
+            {statusLabel ? (
+              <div className="block w-full py-3 rounded-xl text-center text-sm font-semibold uppercase tracking-wide text-white/60 bg-zinc-700/60 border border-white/10 mb-6">
+                {statusLabel}
+              </div>
+            ) : isUpgrade && onUpgrade ? (
+              <button
+                type="button"
+                onClick={() => onUpgrade(pass)}
+                className={`w-full py-3 rounded-xl text-center text-sm font-semibold uppercase tracking-wide text-white bg-gradient-to-br border-0 cursor-pointer mb-6 hover:opacity-90 transition-opacity flex items-center justify-center gap-2 ${styles.gradientForm}`}
+              >
+                <ArrowUpCircle className="w-4 h-4" />
+                Upgrade
+              </button>
+            ) : canRegister ? (
+              <button
+                type="button"
+                onClick={() => onRegister(pass)}
+                className={`block w-full py-3 rounded-xl text-center text-sm font-semibold uppercase tracking-wide text-white bg-gradient-to-br border-0 cursor-pointer mb-6 hover:opacity-90 transition-opacity ${styles.gradientForm}`}
+              >
+                {pass.basePrice === 0 ? "Register" : "Buy Pass"}
+              </button>
+            ) : (
+              <Link
+                to="/login"
+                className="block w-full py-3 rounded-xl text-center text-sm font-semibold uppercase tracking-wide text-white/80 bg-zinc-700/80 border border-white/10 mb-6"
+              >
+                Login to Register
+              </Link>
+            )}
+          </div>
+          
+          {/* <div className="">
               {
                 <button
                   {...(pass.buttonAttrs || {})}
@@ -218,7 +251,7 @@ function PassCard({ pass, onRegister, onUpgrade, isUpgrade, userPassStatus }) {
                   Register
                 </button>
               }
-          </div>
+          </div> */}
           
         </div>
         <ul className="space-y-2 mt-2">

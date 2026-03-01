@@ -176,7 +176,7 @@ export default function EventTimelineSection() {
 
   return (
     <section
-      id="page9"
+      id="page4"
       className="relative w-full max-w-[100vw] min-h-0 h-auto m-0 p-0 flex flex-col items-center justify-center overflow-x-hidden overflow-y-auto bg-black py-8 md:py-10"
       style={{
         backgroundImage:
