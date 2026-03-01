@@ -17,10 +17,16 @@ const PASSES = [
     id: "expo",
     slug: "expo",
     name: "Expo Visitor Pass",
-    subtitle: "(The Free Pass)",
+    subtitle: "₹99",
     price: "FREE",
     basePrice: 0,
     theme: "purple",
+    buttonAttrs: {
+      "data-tally-open": "VLZo1g",
+      "data-tally-layout": "modal",
+      "data-tally-width": "800",
+      "data-tally-auto-close": "120000",      
+    },
     featuresIncluded: [
       "Startup Expo",
       "Brand booths",
@@ -39,10 +45,16 @@ const PASSES = [
     id: "general",
     slug: "general",
     name: "General Delegate Pass",
-    subtitle: "(The Red Pass)",
+    subtitle: "₹199",
     price: "₹99",
     basePrice: 99,
     theme: "red",
+    buttonAttrs: {
+      "data-tally-open": "q4bYdG",
+      "data-tally-layout": "modal",
+      "data-tally-width": "800",
+      "data-tally-auto-close": "120000", 
+    },
     featuresIncluded: [
       "Access to speaker sessions",
       "Expo area",
@@ -59,10 +71,16 @@ const PASSES = [
     id: "competition",
     slug: "competition",
     name: "Competition Passes",
-    subtitle: "(The Blue Pass)",
+    subtitle: "₹299",
     price: "₹199",
     basePrice: 199,
     theme: "blue",
+    buttonAttrs: {
+      "data-tally-open": "GxrYDk",
+      "data-tally-layout": "modal",
+      "data-tally-width": "800",
+      "data-tally-auto-close": "120000", 
+    },
     featuresIncluded: [
       "Entry to any competition(s)",
       "General Summit access included",
@@ -79,10 +97,16 @@ const PASSES = [
     id: "premium",
     slug: "premium",
     name: "Premium Passes",
-    subtitle: "(The Green Pass)",
+    subtitle: "₹799",
     price: "₹499",
     basePrice: 499,
     theme: "green",
+    buttonAttrs: {
+      "data-tally-open": "aQBZDB",
+      "data-tally-layout": "modal",
+      "data-tally-width": "800",
+      "data-tally-auto-close": "120000", 
+    },
     featuresIncluded: [
       "All sessions",
       "Priority seating at event",
@@ -98,18 +122,18 @@ const PASSES = [
 
 const THEME_STYLES = {
   purple: {
-    border: "hover:border-purple-500/40 hover:shadow-[0_0_25px_rgba(168,85,247,0.15)]",
-    iconBg: "from-purple-400/30 to-white/10",
-    iconColor: "text-purple-300/90",
-    checkBg: "bg-purple-500/20 text-purple-400",
-    gradientForm: "from-violet-500 to-purple-600",
+    border: "hover:border-white-500/40 hover:shadow-[0_0_25px_rgba(255,255,255,0.15)]",
+    iconBg: "from-white-400/30 to-white/10",
+    iconColor: "text-white-300/90",
+    checkBg: "bg-white-500/20 text-white-400",
+    gradientForm: "from-gray-500 to-white-600",
   },
   red: {
-    border: "hover:border-red-500/40 hover:shadow-[0_0_25px_rgba(239,68,68,0.15)]",
-    iconBg: "from-red-400/30 to-white/10",
-    iconColor: "text-red-300/90",
-    checkBg: "bg-red-500/20 text-red-400",
-    gradientForm: "from-red-500 to-rose-600",
+    border: "hover:border-yellow-500/40 hover:shadow-[0_0_25px_rgba(239,68,68,0.15)]",
+    iconBg: "from-yellow-400/30 to-white/10",
+    iconColor: "text-yellow-300/90",
+    checkBg: "bg-yellow-500/20 text-yellow-400",
+    gradientForm: "from-yellow-500 to-rose-600",
   },
   blue: {
     border: "hover:border-blue-500/40 hover:shadow-[0_0_25px_rgba(59,130,246,0.15)]",
@@ -165,7 +189,7 @@ function PassCard({ pass, onRegister, onUpgrade, isUpgrade, userPassStatus }) {
       className={`relative flex flex-col h-full rounded-2xl bg-zinc-900/80 border border-white/10 shadow-xl shadow-black/40 overflow-hidden backdrop-blur-sm transition-all duration-300 ${styles.border}`}
     >
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
-      <div className="relative z-10 flex flex-col h-full p-6 sm:p-7">
+      <div className="relative z-10 flex flex-col p-6 sm:p-7">
         <div className="flex-1 flex flex-col">
           <div className="flex flex-col items-center text-center mb-6">
             <div
@@ -173,47 +197,29 @@ function PassCard({ pass, onRegister, onUpgrade, isUpgrade, userPassStatus }) {
             >
               <Crown className={`w-5 h-5 ${styles.iconColor}`} />
             </div>
-            <h3 className="text-xl font-bold text-white">{pass.name}</h3>
-            <p className="text-sm text-white/70 mt-1">{pass.subtitle}</p>
+            <h3 className="text-l font-bold text-white">{pass.name}</h3>
+            <p className="text text-white/70 mt-1"><del>{pass.subtitle}</del> (Early Bird)</p>
           </div>
           <div className="flex flex-wrap items-baseline justify-center gap-2 mb-5">
             <span className="text-2xl font-bold text-white">{pass.price}</span>
           </div>
-          <div className="mt-auto">
-            {statusLabel ? (
-              <div className="block w-full py-3 rounded-xl text-center text-sm font-semibold uppercase tracking-wide text-white/60 bg-zinc-700/60 border border-white/10 mb-6">
-                {statusLabel}
-              </div>
-            ) : isUpgrade && onUpgrade ? (
-              <button
-                type="button"
-                onClick={() => onUpgrade(pass)}
-                className={`w-full py-3 rounded-xl text-center text-sm font-semibold uppercase tracking-wide text-white bg-gradient-to-br border-0 cursor-pointer mb-6 hover:opacity-90 transition-opacity flex items-center justify-center gap-2 ${styles.gradientForm}`}
-              >
-                <ArrowUpCircle className="w-4 h-4" />
-                Upgrade
-              </button>
-            ) : canRegister ? (
-              <button
-                type="button"
-                onClick={() => onRegister(pass)}
-                className={`block w-full py-3 rounded-xl text-center text-sm font-semibold uppercase tracking-wide text-white bg-gradient-to-br border-0 cursor-pointer mb-6 hover:opacity-90 transition-opacity ${styles.gradientForm}`}
-              >
-                {pass.basePrice === 0 ? "Register" : "Buy Pass"}
-              </button>
-            ) : (
-              <button
-                data-tally-open="q4bYdG"
-                data-tally-layout="modal"
-                data-tally-width="800"
-                data-tally-overlay="1"
-                data-tally-auto-close="90000"
-                className="block w-full py-3 rounded-xl text-center text-sm font-semibold uppercase tracking-wide text-white/80 bg-zinc-700/80 border border-white/10 mb-6 cursor-pointer"
-              >
-                Register
-              </button>
-            )}
+          <div className="">
+              {
+                <button
+                  {...(pass.buttonAttrs || {})}
+                  onClick={(e) => {
+                    // allow external handlers to run when registering
+                    if (canRegister && typeof onRegister === "function") {
+                      onRegister(pass);
+                    }
+                  }}
+                  className="block w-full py-3 rounded-xl text-center text-sm font-semibold uppercase tracking-wide text-white/80 bg-zinc-700/80 border border-white/10 mb-6 cursor-pointer"
+                >
+                  Register
+                </button>
+              }
           </div>
+          
         </div>
         <ul className="space-y-2 mt-2">
           {pass.featuresIncluded.map((f) => (
