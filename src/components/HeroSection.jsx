@@ -100,7 +100,7 @@ function HeroSection({ scrollToPage }) {
       </div>
 
       {/* Bottom: CTA buttons, date/venue, scroll button, social icons */}
-      <div className="w-full pointer-events-auto absolute bottom-0 left-0 z-50 flex flex-col items-center gap-3 p-[clamp(1rem,4vw,2rem)] px-[clamp(1rem,5vw,3rem)] text-white bg-transparent max-[900px]:p-4 max-[600px]:p-4 max-[600px]:px-3 max-[480px]:p-3">
+      <div className="w-full pointer-events-auto absolute bottom-0 left-0 z-50 flex flex-col items-center p-[clamp(1rem,4vw,2rem)] px-[clamp(1rem,5vw,3rem)] text-white bg-transparent max-[900px]:p-4 max-[600px]:p-4 max-[600px]:px-3 max-[480px]:p-3">
         {/* Register / Login buttons — aligned with site colors (purple primary + glass secondary) */}
         <div className="flex flex-row items-center justify-center gap-3 sm:gap-4">
           {isLoggedIn ? (
