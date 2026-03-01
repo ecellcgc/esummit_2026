@@ -129,7 +129,7 @@ function ContactUsSection() {
           <div className="space-y-4">
             <a
               href="mailto:official@ecellcgc.in"
-              className="flex items-start gap-4 p-5 px-20 rounded-xl bg-white/[0.06] backdrop-blur-xl border border-white/10 hover:border-purple-500/40 transition-colors group shadow-[0_4px_24px_rgba(0,0,0,0.2)]"
+              className="flex items-start gap-4 p-5 rounded-xl bg-white/[0.06] backdrop-blur-xl border border-white/10 hover:border-purple-500/40 transition-colors group shadow-[0_4px_24px_rgba(0,0,0,0.2)]"
             >
               <div className="w-12 h-12 rounded-xl bg-purple-600/20 flex items-center justify-center shrink-0 group-hover:bg-purple-600/30 transition-colors">
                 <Mail className="w-6 h-6 text-purple-400" />
@@ -140,7 +140,7 @@ function ContactUsSection() {
                 <p className="text-white/40 text-xs mt-1">We typically respond within 24 hours</p>
               </div>
             </a>
-            <div className="flex items-start gap-4 p-5 px-20 rounded-xl bg-white/[0.06] backdrop-blur-xl border border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.2)]">
+            <div className="flex items-start gap-4 p-5 rounded-xl bg-white/[0.06] backdrop-blur-xl border border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.2)]">
               <div className="w-12 h-12 rounded-xl bg-purple-600/20 flex items-center justify-center shrink-0">
                 <Phone className="w-6 h-6 text-purple-400" />
               </div>
@@ -154,7 +154,7 @@ function ContactUsSection() {
                 <p className="text-white/40 text-xs mt-2">Mon-Sat, 10 AM - 6 PM IST</p>
               </div>
             </div>
-            <div className="flex items-start gap-4 p-5 px-20 rounded-xl bg-white/[0.06] backdrop-blur-xl border border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.2)]">
+            <div className="flex items-start gap-4 p-5 rounded-xl bg-white/[0.06] backdrop-blur-xl border border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.2)]">
               <div className="w-12 h-12 rounded-xl bg-purple-600/20 flex items-center justify-center shrink-0">
                 <MapPin className="w-6 h-6 text-purple-400" />
               </div>

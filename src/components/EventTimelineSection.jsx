@@ -176,52 +176,70 @@ export default function EventTimelineSection() {
 
   return (
     <section
-      id="page4"
-      className="relative w-full max-w-[100vw] !min-h-0 !h-auto m-0 p-0 overflow-x-hidden overflow-y-visible bg-black py-8 md:py-10"
+      id="page9"
+      className="relative w-full max-w-[100vw] min-h-0 h-auto m-0 p-0 flex flex-col items-center justify-center overflow-x-hidden overflow-y-auto bg-black py-8 md:py-10"
       style={{
-        backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-        backgroundSize: '40px 40px',
-        backgroundAttachment: 'fixed',
+        backgroundImage:
+          "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+        backgroundSize: "40px 40px",
+        backgroundAttachment: "fixed",
       }}
     >
-      {/* Background Elements - top accent line; no fade overlay */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent pointer-events-none z-[1]" />
-      {/* Soft gradient orbs for depth */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-purple-600/15 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-32 w-80 h-80 rounded-full bg-violet-500/12 blur-[100px] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-purple-500/5 blur-[150px] pointer-events-none" />
-
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-3 sm:px-4 py-6 md:py-8 flex flex-col items-center">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-6 md:mb-8"
-        >
-          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-purple-400/90 mb-2">Plan your experience</p>
-          <h2 className="font-sans text-[clamp(32px,5vw,64px)] text-white font-bold uppercase tracking-[2px] m-0 mb-4">
-            TIMELINE SCHEDULE
-          </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-transparent mx-auto rounded-full" />
-        </motion.div>
-
-        {/* To Be Revealed */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="w-full flex flex-col items-center justify-center py-16 md:py-24"
-        >
-          <div className="relative px-8 py-6 rounded-2xl border border-purple-500/20 bg-white/[0.03] backdrop-blur-sm">
-            <div className="absolute -inset-1 rounded-2xl bg-purple-500/5 blur-xl pointer-events-none" />
-            <p className="relative text-2xl sm:text-3xl md:text-4xl font-bold text-white/80 tracking-widest uppercase text-center m-0">
-              To Be Revealed
-            </p>
-          </div>
-        </motion.div>
-      </div>
+    <h2 className="font-sans text-[clamp(32px,5vw,64px)] text-white font-bold uppercase tracking-[2px] m-0">
+            schedule
+    </h2>
+    <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-purple-400/90 mb-2">To be revealed</p>
+    {/* <p className="relative text-2xl sm:text-3xl md:text-4xl font-bold text-white/80 tracking-widest uppercase text-center m-0">
+               "To Be Revealed"
+             </p> */}
     </section>
+    // <section
+    //   id="page4"
+    //   className="relative w-full max-w-[100vw] !min-h-0 !h-auto m-0 p-0 overflow-x-hidden overflow-y-visible bg-black py-8 md:py-10"
+    //   style={{
+    //     backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+    //     backgroundSize: '40px 40px',
+    //     backgroundAttachment: 'fixed',
+    //   }}
+    // >
+    //   {/* Background Elements - top accent line; no fade overlay */}
+    //   <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent pointer-events-none z-[1]" />
+    //   {/* Soft gradient orbs for depth */}
+    //   <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-purple-600/15 blur-[120px] pointer-events-none" />
+    //   <div className="absolute bottom-1/4 -right-32 w-80 h-80 rounded-full bg-violet-500/12 blur-[100px] pointer-events-none" />
+    //   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-purple-500/5 blur-[150px] pointer-events-none" />
+
+    //   <div className="relative z-10 w-full max-w-7xl mx-auto px-3 sm:px-4 py-6 md:py-8 flex flex-col items-center">
+    //     {/* Header */}
+    //     <motion.div
+    //       initial={{ opacity: 0, y: -20 }}
+    //       whileInView={{ opacity: 1, y: 0 }}
+    //       transition={{ duration: 0.6 }}
+    //       className="text-center mb-6 md:mb-8"
+    //     >
+    //       <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-purple-400/90 mb-2">Plan your experience</p>
+    //       <h2 className="font-sans text-[clamp(32px,5vw,64px)] text-white font-bold uppercase tracking-[2px] m-0 mb-4">
+    //         TIMELINE SCHEDULE
+    //       </h2>
+    //       <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-transparent mx-auto rounded-full" />
+    //     </motion.div>
+
+    //     {/* To Be Revealed */}
+    //     <motion.div
+    //       initial={{ opacity: 0, scale: 0.9 }}
+    //       whileInView={{ opacity: 1, scale: 1 }}
+    //       viewport={{ once: true }}
+    //       transition={{ duration: 0.6, delay: 0.2 }}
+    //       className="w-full flex flex-col items-center justify-center py-16 md:py-24"
+    //     >
+    //       <div className="relative px-8 py-6 rounded-2xl border border-purple-500/20 bg-white/[0.03] backdrop-blur-sm">
+    //         <div className="absolute -inset-1 rounded-2xl bg-purple-500/5 blur-xl pointer-events-none" />
+    //         <p className="relative text-2xl sm:text-3xl md:text-4xl font-bold text-white/80 tracking-widest uppercase text-center m-0">
+    //           To Be Revealed
+    //         </p>
+    //       </div>
+    //     </motion.div>
+    //   </div>
+    // </section>
   );
 }
