@@ -36,17 +36,20 @@ body {
 	body {
 		background-attachment: scroll;
 		min-height: 100dvh;
-		overflow: hidden;
-		height: 100dvh;
+		/* allow vertical scrolling on small screens */
+		overflow-y: auto;
+		height: auto;
 	}
 
 	#root {
-		height: 100dvh;
+		height: auto;
 		min-height: 100dvh;
-		overflow: hidden;
+		/* allow scrolling within app root on mobile */
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
 	}
-}
 
+}
 #root {
 	width: 100%;
 	min-height: 100vh;

@@ -64,8 +64,8 @@ const Index = () => {
 	const displayUser = user ?? mockBackendData.user;
 
   return (
-    <div
-      className="relative min-h-screen bg-cover bg-center bg-fixed"
+		<div
+			className="relative min-h-screen bg-cover bg-center bg-fixed overflow-y-auto"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(${bgImage})`,
       }}
@@ -79,7 +79,7 @@ const Index = () => {
 			</div>
 
 			{/* Main Content Container - Centered with max-width */}
-			<div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-6 pt-24 md:px-12 flex flex-col items-center min-h-screen space-y-8">
+			<div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-6 pt-24 md:px-12 flex flex-col items-center space-y-8 pb-24 min-h-0">
 				{/* Welcome Section */}
 				<div className="mt-8 text-center">
 					<h1 className="text-3xl font-bold text-white mb-4">Welcome back</h1>
@@ -101,32 +101,19 @@ const Index = () => {
 					<div className="h-full">
 						<UserCard user={displayUser} />
 					</div>
-
-					{/* Countdown Timer */}
-					<div className="h-full">
-						<CountdownCard targetDate={mockBackendData.targetDate} />
-					</div>
-
-					{/* Stats Card */}
-					<div className="h-full">
-						<StatsCard
-							value={mockBackendData.stats.eventsRegistered}
-							label="Events Registered"
-						/>
-					</div>
 				</div>
 
 				{/* 2. Middle Row: Events & Profile Side-by-Side */}
 				<div className="grid gap-6 grid-cols-1 md:grid-cols-2 w-full max-w-5xl mx-auto h-full">
 					{/* Events List */}
-					<div className="w-full h-full">
+					{/* <div className="w-full h-full">
 						<EventsList events={mockBackendData.events} />
-					</div>
+					</div> */}
 
 					{/* Profile Information */}
 					<div className="w-full h-full space-y-6">
 						<ProfileInfo profile={{ ...mockBackendData.profile, fullName: displayUser.name, email: displayUser.email }} />
-						{myPasses !== null && (
+						{/* {myPasses !== null && (
 							<div className="glass-card-hover p-6">
 								<h3 className="font-semibold text-purple-300 mb-2">My passes</h3>
 								{myPasses.length > 0 ? (
@@ -147,7 +134,7 @@ const Index = () => {
 								)}
 								<Link to="/passes" className="mt-3 inline-block text-sm text-purple-300 hover:text-purple-200 hover:underline">View all passes →</Link>
 							</div>
-						)}
+						)} */}
 					</div>
 				</div>
 
@@ -161,28 +148,21 @@ const Index = () => {
         */}
 
 				{/* Floating action buttons */}
+				{/* Logout Button */}
 				<div className="fixed bottom-6 left-6 right-6 flex flex-col-reverse md:flex-row justify-between gap-4 z-40 max-w-7xl mx-auto w-auto px-0 md:px-12 pointer-events-none">
 					<button
-						onClick={() => toast.info("Accommodation portal opening soon!")}
+						onClick={handleLogout}
 						className="btn-gradient flex items-center justify-center gap-2 shadow-lg pointer-events-auto !w-full md:!w-auto"
 					>
-						Accommodation
+						Log Out
 					</button>
+
 					<Link
 						to="/passes"
 						className="btn-gradient flex items-center justify-center gap-2 shadow-lg pointer-events-auto !w-full md:!w-auto no-underline text-white"
 					>
-						Register for Passes
+						Buy Passes
 					</Link>
-				</div>
-				{/* Logout Button */}
-				<div className="w-full max-w-7xl mx-auto px-6 md:px-12 pb-12 flex justify-center">
-					<button
-						onClick={handleLogout}
-						className="px-6 py-2 rounded-full border border-red-400/60 text-red-300 hover:bg-red-500/20 hover:text-red-200 transition-colors"
-					>
-						Log Out
-					</button>
 				</div>
 			</div>
 		</div>

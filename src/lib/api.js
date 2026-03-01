@@ -91,7 +91,8 @@ function mapMeUser(user) {
     ...user,
     name,
     fullName: name,
-    esummit_id: user.id,
+    esummit_id: user.esummitId ?? null,
+    esummitId: user.esummitId ?? null,
     picture: user.avatar,
     image: user.avatar,
   };
@@ -238,6 +239,38 @@ export async function getUsers(params = {}) {
   return res.json();
 }
 
+// ——— Competitions ———
+
+/** List all competitions (id, slug, name, isIndividualOnly). Seeds if empty. */
+export async function getCompetitions() {
+  const res = await fetch(`${API_BASE}/v1/competitions`);
+  if (!res.ok) return [];
+  const data = await res.json();
+  return data.payload?.competitions ?? [];
+}
+
+/** Register for a competition. Body: { competitionSlug, teamName?, memberEsummitIds? } */
+export async function registerCompetition(body) {
+  const res = await authFetch(`${API_BASE}/v1/competitions/register`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    throw new Error(data.message || data.error || `Request failed: ${res.status}`);
+  }
+  return data.payload ?? data;
+}
+
+/** My competition registrations */
+export async function getMyCompetitionRegistrations() {
+  const res = await authFetch(`${API_BASE}/v1/competitions/my-registrations`);
+  if (!res.ok) return { registrations: [] };
+  const data = await res.json();
+  return data.payload ?? { registrations: [] };
+}
+
 export default {
   requestOtp,
   verifyOtp,
@@ -254,6 +287,9 @@ export default {
   createUpgradeRequest,
   getPassRegistrations,
   getUsers,
+  getCompetitions,
+  registerCompetition,
+  getMyCompetitionRegistrations,
   getAccessToken,
   getSessionId,
   setAuth,

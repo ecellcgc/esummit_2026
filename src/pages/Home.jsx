@@ -203,9 +203,9 @@ function Home() {
         {/* <MarqueeSection /> */}
         {/* <WhyAttendSection /> */}
         {/* <PastEventGlimpsesSection /> */}
-  <PastGuestsSection />
-  <PartnersSection />
-  <ContactUsSection />
+        <PastGuestsSection />
+        <PartnersSection />
+        <ContactUsSection />
         <Footer />
       </div>
     </>

@@ -103,13 +103,37 @@ function HeroSection({ scrollToPage }) {
       <div className="w-full pointer-events-auto absolute bottom-0 left-0 z-50 flex flex-col items-center gap-3 p-[clamp(1rem,4vw,2rem)] px-[clamp(1rem,5vw,3rem)] text-white bg-transparent max-[900px]:p-4 max-[600px]:p-4 max-[600px]:px-3 max-[480px]:p-3">
         {/* Register / Login buttons — aligned with site colors (purple primary + glass secondary) */}
         <div className="flex flex-row items-center justify-center gap-3 sm:gap-4">
+          {isLoggedIn ? (
+            <Link
+              to="/dashboard"
+              className="group flex flex-row items-center justify-center gap-2.5 py-3 px-6 rounded-full min-w-[140px] font-sans bg-purple-600 hover:bg-purple-500 border border-purple-400/20 text-white font-semibold text-sm tracking-widest uppercase shadow-[0_4px_20px_rgba(168,85,247,0.25)] transition-all duration-300 hover:shadow-[0_6px_24px_rgba(168,85,247,0.35)] hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black max-[600px]:py-2.5 max-[600px]:px-5 max-[600px]:min-w-[120px] max-[600px]:text-xs"
+            >
+              <span>Dashboard</span>
+              <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+            </Link>
+          ) : (
+            <Link
+              to="/register"
+              className="group flex flex-row items-center justify-center gap-2.5 py-3 px-6 rounded-full min-w-[140px] font-sans bg-purple-600 hover:bg-purple-500 border border-purple-400/20 text-white font-semibold text-sm tracking-widest uppercase shadow-[0_4px_20px_rgba(168,85,247,0.25)] transition-all duration-300 hover:shadow-[0_6px_24px_rgba(168,85,247,0.35)] hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black max-[600px]:py-2.5 max-[600px]:px-5 max-[600px]:min-w-[120px] max-[600px]:text-xs"
+            >
+              <span>Register</span>
+              <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+            </Link>
+          )}
           <Link
+            to="/passes"
+            className="group flex flex-row items-center justify-center gap-2.5 py-3 px-6 rounded-full min-w-[140px] font-sans bg-white/5 border border-white/10 backdrop-blur-md text-white font-semibold text-sm tracking-widest uppercase transition-all duration-300 hover:bg-white/10 hover:border-purple-500/40 hover:shadow-[0_4px_20px_rgba(168,85,247,0.15)] hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black max-[600px]:py-2.5 max-[600px]:px-5 max-[600px]:min-w-[120px] max-[600px]:text-xs"
+          >
+            <span>Passes</span>
+            <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+          </Link>
+          {/* <Link
             to="/passes"
             className="group flex flex-row items-center justify-center gap-2.5 py-3 px-6 rounded-full min-w-[140px] font-sans bg-purple-600 hover:bg-purple-500 border border-purple-400/20 text-white font-semibold text-sm tracking-widest uppercase shadow-[0_4px_20px_rgba(168,85,247,0.25)] transition-all duration-300 hover:shadow-[0_6px_24px_rgba(168,85,247,0.35)] hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black max-[600px]:py-2.5 max-[600px]:px-5 max-[600px]:min-w-[120px] max-[600px]:text-xs"
           >
             <span>Passes</span>
             <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-0.5" />
-          </Link>
+          </Link> */}
         </div>
         <span className="text-white text-sm mx-20 mb-20">Buy passes to attend E-Summit.</span>
         {/* Date and venue — below Register/Login, above scroll button */}
