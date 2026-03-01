@@ -18,16 +18,19 @@ This is the React version of the E-SUMMIT 2K26 website, converted from vanilla H
 ## Installation
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
 
 2. Start the development server:
+
 ```bash
 npm run dev
 ```
 
 3. Build for production:
+
 ```bash
 npm run build
 ```
@@ -65,10 +68,3 @@ npm run build
 - SplitType (text animations)
 - Supabase (database)
 - Vite (build tool)
-
-## Notes
-
-- All animations and design elements from the original project are preserved
-- The video background and canvas animations work exactly as before
-- Supabase configuration is in the Register component
-- All assets should be placed in the `public/assets/` folder
