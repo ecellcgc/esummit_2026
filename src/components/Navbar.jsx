@@ -154,26 +154,13 @@ function Navbar({ scrollToPage }) {
 
         {/* RIGHT: ACTIONS */}
         <div className="flex items-center gap-4">
-          {isLoggedIn ? (
-            <div className="hidden min-[901px]:block">
-              <Link
-                to="/dashboard"
-                className="group bg-white text-black py-2.5 px-6 rounded-full font-semibold no-underline flex items-center gap-2 text-[0.95rem] whitespace-nowrap transition-all duration-200 hover:scale-105 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]"
-              >
-                Dashboard{" "}
-                <ArrowUpRight
-                  size={16}
-                  className="transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                />
-              </Link>
-            </div>
-          ) : (
+          {(
             <div className="hidden min-[901px]:block">
               <Link
                 to="/passes"
                 className="group bg-white text-black py-2.5 px-6 rounded-full font-semibold no-underline flex items-center gap-2 text-[0.95rem] whitespace-nowrap transition-all duration-200 hover:scale-105 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]"
               >
-                Passes{" "}
+                <span>Passes</span>
                 <ArrowUpRight
                   size={16}
                   className="transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
