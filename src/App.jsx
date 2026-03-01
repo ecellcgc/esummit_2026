@@ -9,7 +9,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import TermsAndConditions from "./pages/TermsAndConditions";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
+const PrivacyPolicy = React.lazy(() => import("./pages/PrivacyPolicy"));
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import LongPassesPage from "./pages/LongPassesPage";
@@ -53,7 +53,14 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
               <Route path="/terms" element={<TermsAndConditions />} />
-              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route
+                path="/privacy"
+                element={
+                  <React.Suspense fallback={<div className="p-6 text-center">Loading...</div>}>
+                    <PrivacyPolicy />
+                  </React.Suspense>
+                }
+              />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/passes" element={<LongPassesPage />} />
