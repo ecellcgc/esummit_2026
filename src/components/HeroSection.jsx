@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import heroLogo from "../assets/hero-logo.png";
+import ParticlesCanvas from './ParticlesCanvas';
 
 function HeroSection({ scrollToPage }) {
   const canvasRef = useRef(null);
@@ -72,7 +73,7 @@ function HeroSection({ scrollToPage }) {
     <section className="relative w-full max-w-[100vw] min-h-screen h-auto m-0 p-0 overflow-hidden" id="page1">
       {/* Blur overlay: softens the bright bg image and improves text readability */}
       <div
-        className="absolute inset-0 z-0 backdrop-blur-[1px] bg-black/25 pointer-events-none"
+        className="absolute inset-0 z-0 backdrop-blur-[1px] bg-black/40 pointer-events-none"
         aria-hidden
       />
       <div className="relative z-[2] w-full h-full flex flex-col justify-between pointer-events-none">
@@ -82,14 +83,14 @@ function HeroSection({ scrollToPage }) {
             <img
               src={heroLogo}
               alt="E-Summit 2026 Logo"
-              className="w-full max-w-[min(1500px,100%)] min-h-[280px] max-h-[92vh] mx-auto object-contain overflow-hidden clip-path-[inset(30%_0_30%_0)] drop-shadow-[0_0_20px_rgba(168,85,247,0.4)]"
+              className="w-full max-w-[min(700px,100%)] min-h-[280px] max-h-[92vh] mt-80 mx-auto object-contain overflow-hidden clip-path-[inset(30%_0_30%_0)] drop-shadow-[0_0_20px_rgba(168,85,247,0.4)]"
             />
           </div>
         </div>
       </div>
 
       {/* Mobile only: dedicated region for E-Summit logo — centered in viewport */}
-      <div className="absolute top-[28%] bottom-[clamp(6rem,22vw,9rem)] inset-x-0 w-full max-w-[100vw] md:hidden flex items-center justify-center px-4 pointer-events-none z-[10] box-border">
+      <div className="absolute top-[8%] bottom-[clamp(6rem,22vw,9rem)] inset-x-0 w-full max-w-[100vw] md:hidden flex items-center justify-center px-4 pointer-events-none z-[10] box-border">
         <img
           src={heroLogo}
           alt="E-Summit 2026 Logo"
@@ -100,7 +101,7 @@ function HeroSection({ scrollToPage }) {
       {/* Bottom: CTA buttons, date/venue, scroll button, social icons */}
       <div className="w-full pointer-events-auto absolute bottom-0 left-0 z-50 flex flex-col items-center gap-3 p-[clamp(1rem,4vw,2rem)] px-[clamp(1rem,5vw,3rem)] text-white bg-transparent max-[900px]:p-4 max-[600px]:p-4 max-[600px]:px-3 max-[480px]:p-3">
         {/* Register / Login buttons — aligned with site colors (purple primary + glass secondary) */}
-        <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-1">
+        <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-10">
           <Link
             to="/passes"
             className="group flex flex-row items-center justify-center gap-2.5 py-3 px-6 rounded-full min-w-[140px] font-sans bg-purple-600 hover:bg-purple-500 border border-purple-400/20 text-white font-semibold text-sm tracking-widest uppercase shadow-[0_4px_20px_rgba(168,85,247,0.25)] transition-all duration-300 hover:shadow-[0_6px_24px_rgba(168,85,247,0.35)] hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black max-[600px]:py-2.5 max-[600px]:px-5 max-[600px]:min-w-[120px] max-[600px]:text-xs"
@@ -109,6 +110,7 @@ function HeroSection({ scrollToPage }) {
             <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-0.5" />
           </Link>
         </div>
+        <span className="mb-5">Buy passes to attend E-Summit and participate in competitions.</span>
         {/* Date and venue — below Register/Login, above scroll button */}
         <div className="flex flex-col items-center gap-0.5 text-center pointer-events-none">
 
@@ -178,6 +180,14 @@ function HeroSection({ scrollToPage }) {
 
 
       <canvas id="draw" ref={canvasRef} className="absolute -top-[5px] left-0 w-full max-w-[100vw] h-[102vh] z-[1] block" />
+      {/* Small purple/violet particles layer (non-interactive on hero) */}
+      <ParticlesCanvas
+        count={150}
+        colors={["#a855f7", "#c084fc", "#7c3aed"]}
+        sizeRange={[0.4, 1.2]}
+        interactive={false}
+        className="absolute inset-0 w-full h-full pointer-events-none z-[1]"
+      />
     </section>
   );
 }

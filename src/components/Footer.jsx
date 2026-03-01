@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../../public/assets/ecl_logo.png";
 import {
   Facebook,
   Twitter,
@@ -25,10 +26,7 @@ const Footer = () => {
               href="#"
               className="!flex-row !items-end gap-2 !text-2xl no-underline text-white font-sans"
             >
-              E-CELL{" "}
-              <span className="text-[0.5em] opacity-70 tracking-[2px] mb-1">
-                CGC
-              </span>
+              <img src={logo} alt="E-CELL CGC Logo" className="w-30 h-20" />
             </a>
           </div>
 
@@ -108,7 +106,7 @@ const Footer = () => {
             </p>
               <div className="flex flex-col gap-2">
               <a
-              href="tel:+918817614784"
+              href="tel:+919389723192"
               className="inline-flex items-center gap-2 btn-gradient text-white px-6 py-3 rounded-lg font-bold font-sans hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
               <Phone size={18} />
@@ -148,13 +146,18 @@ const Footer = () => {
                   label: "Instagram",
                 },
                 {
+                  Icon: Instagram,
+                  href: "https://www.instagram.com/ecell.cgc",
+                  label: "Instagram",
+                },
+                {
                   Icon: Linkedin,
                   href: "https://www.linkedin.com/company/ecellcgc/",
                   label: "LinkedIn",
                 },
                 {
                   Icon: Mail,
-                  href: "mailto:esummit@ecellcgccoe.com",
+                  href: "mailto:official@ecellcgc.in",
                   label: "Email",
                 },
               ].map(({ Icon, href, label }, index) => (

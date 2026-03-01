@@ -12,6 +12,7 @@ import EventTimelineSection from '../components/EventTimelineSection'
 import MarqueeSection from '../components/MarqueeSection'
 import WhyAttendSection from '../components/WhyAttendSection'
 import PastGuestsSection from '../components/PastGuestsSection'
+import PartnersSection from '../components/PartnersSection'
 import ContactUsSection from '../components/ContactUsSection'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -202,8 +203,9 @@ function Home() {
         {/* <MarqueeSection /> */}
         {/* <WhyAttendSection /> */}
         {/* <PastEventGlimpsesSection /> */}
-        <PastGuestsSection />
-        <ContactUsSection />
+  <PastGuestsSection />
+  <PartnersSection />
+  <ContactUsSection />
         <Footer />
       </div>
     </>

@@ -44,8 +44,8 @@ function ContactUsSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-          {/* Contact form - glassy panel */}
+        <div className="grid gap-8 lg:gap-12">
+          {/* Contact form - glassy panel
           <div className="rounded-2xl bg-white/[0.06] backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] p-6 md:p-8">
             {submitted ? (
               <div className="text-center py-8">
@@ -123,24 +123,24 @@ function ContactUsSection() {
                 </button>
               </form>
             )}
-          </div>
+          </div> */}
 
           {/* Contact info cards */}
           <div className="space-y-4">
             <a
-              href="mailto:esummit@cgc.edu.in"
-              className="flex items-start gap-4 p-5 rounded-xl bg-white/[0.06] backdrop-blur-xl border border-white/10 hover:border-purple-500/40 transition-colors group shadow-[0_4px_24px_rgba(0,0,0,0.2)]"
+              href="mailto:official@ecellcgc.in"
+              className="flex items-start gap-4 p-5 px-20 rounded-xl bg-white/[0.06] backdrop-blur-xl border border-white/10 hover:border-purple-500/40 transition-colors group shadow-[0_4px_24px_rgba(0,0,0,0.2)]"
             >
               <div className="w-12 h-12 rounded-xl bg-purple-600/20 flex items-center justify-center shrink-0 group-hover:bg-purple-600/30 transition-colors">
                 <Mail className="w-6 h-6 text-purple-400" />
               </div>
               <div>
                 <h3 className="font-semibold text-white mb-0.5">Email Us</h3>
-                <p className="text-white/60 text-sm">esummit@cgc.edu.in</p>
+                <p className="text-white/60 text-sm">official@ecellcgc.in</p>
                 <p className="text-white/40 text-xs mt-1">We typically respond within 24 hours</p>
               </div>
             </a>
-            <div className="flex items-start gap-4 p-5 rounded-xl bg-white/[0.06] backdrop-blur-xl border border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.2)]">
+            <div className="flex items-start gap-4 p-5 px-20 rounded-xl bg-white/[0.06] backdrop-blur-xl border border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.2)]">
               <div className="w-12 h-12 rounded-xl bg-purple-600/20 flex items-center justify-center shrink-0">
                 <Phone className="w-6 h-6 text-purple-400" />
               </div>
@@ -154,25 +154,25 @@ function ContactUsSection() {
                 <p className="text-white/40 text-xs mt-2">Mon-Sat, 10 AM - 6 PM IST</p>
               </div>
             </div>
-            <div className="flex items-start gap-4 p-5 rounded-xl bg-white/[0.06] backdrop-blur-xl border border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.2)]">
+            <div className="flex items-start gap-4 p-5 px-20 rounded-xl bg-white/[0.06] backdrop-blur-xl border border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.2)]">
               <div className="w-12 h-12 rounded-xl bg-purple-600/20 flex items-center justify-center shrink-0">
                 <MapPin className="w-6 h-6 text-purple-400" />
               </div>
               <div>
                 <h3 className="font-semibold text-white mb-0.5">Visit Us</h3>
                 <p className="text-white/60 text-sm">
-                  CGC Landran, NH-05, Landran<br />
+                  E-Cell, Block 10, CGC Landran, NH-05, Landran<br />
                   Mohali, Punjab 140307, India
                 </p>
               </div>
             </div>
-            <Link
+            {/* <Link
               to="/contact"
               className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white/[0.06] backdrop-blur-xl border border-white/10 hover:border-purple-500/40 text-purple-400 hover:bg-purple-500/10 transition-colors text-sm font-medium shadow-[0_4px_24px_rgba(0,0,0,0.2)]"
             >
               Full contact page
               <ArrowRight className="w-4 h-4" />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
