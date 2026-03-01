@@ -85,7 +85,7 @@ function HeroSection({ scrollToPage }) {
               alt="E-Summit 2026 Logo"
               className="w-full max-w-[min(700px,100%)] min-h-[280px] max-h-[92vh] mt-80 mx-auto object-contain overflow-hidden clip-path-[inset(30%_0_30%_0)] drop-shadow-[0_0_20px_rgba(168,85,247,0.4)]"
               />
-            <span className="text-white">Buy passes to attend E-Summit and participate in competitions.</span>
+            {/* <span className="text-white">Buy passes to attend E-Summit and participate in competitions.</span> */}
           </div>
         </div>
       </div>
