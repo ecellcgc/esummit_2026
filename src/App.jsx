@@ -6,7 +6,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import TermsAndConditions from "./pages/TermsAndConditions";
 const PrivacyPolicy = React.lazy(() => import("./pages/PrivacyPolicy"));
@@ -53,7 +52,7 @@ function App() {
               {/* <Route path="/esummit" element={<Navigate to="/" replace />} />
               <Route path="/esummit/" element={<Navigate to="/" replace />} /> */}
               <Route path="/" element={<Home />} />
-              <Route path="/register" element={<Register />} />
+              <Route path="/register" element={<Navigate to="/" replace />} />
               <Route path="/login" element={<Login />} />
               <Route path="/terms" element={<TermsAndConditions />} />
               <Route
